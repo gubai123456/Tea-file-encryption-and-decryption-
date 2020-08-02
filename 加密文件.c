@@ -31,13 +31,13 @@ if(argc!=5)
   return 0;
 }	
 		char password[1000]={0};
-	    strcpy(password,argv[2]);//ºóÕß¸´ÖÆµ½Ç°Õß¡£ 
+	    strcpy(password,argv[2]);//åè€…å¤åˆ¶åˆ°å‰è€…ã€‚ 
 	    FILE*fpin=fopen(argv[3],"rb");
 	    FILE*fpout=fopen(argv[4],"wb");
 	    if(fpin!=NULL&&fpout!=NULL) 
 	{ while(!feof(fpin))
 		 {  unsigned int msg[2];
-		    msg[0]=msg[1]=0;//{0}is important Í¬Ê±½â¾öÁËfeofµÄÎÊÌâ Èç¹ûÃÜÂëÉÙÓÚ16×Ö½Ú »á×Ô¶¯²úÉú±ğµÄºó×ºÃÜÂë 
+		    msg[0]=msg[1]=0;//{0}is important åŒæ—¶è§£å†³äº†feofçš„é—®é¢˜ å¦‚æœå¯†ç å°‘äº16å­—èŠ‚ ä¼šè‡ªåŠ¨äº§ç”Ÿåˆ«çš„åç¼€å¯†ç  
 		    if(fread(msg,1,8,fpin)==0) break;
 		    if(argv[1][0]=='e')
 		    {encipher(msg,(unsigned int*)password);}
